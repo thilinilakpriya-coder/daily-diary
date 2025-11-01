@@ -1,0 +1,304 @@
+/* DashboardPage.css */
+
+/* Page wrapper */
+.dashboard-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 20px;
+  font-family: "Inter", "Poppins", Arial, sans-serif;
+  color: #222;
+  background: #50c18e;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1d3557;
+}
+
+/* Logout button */
+.logout-btn {
+  background: #e63946;
+  color: #ffffff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.logout-btn:hover {
+  background: #c1121f;
+  transform: translateY(-1px);
+}
+
+/* Add diary section */
+.add-diary {
+  background: #4e80c2;
+  border: 1px solid #eef5fb;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.03);
+}
+
+.add-diary h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #0f1724;
+}
+
+/* Form layout */
+.add-diary form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+/* Make form single column on narrow screens */
+@media (max-width: 640px) {
+  .add-diary form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Inputs / textarea / select */
+.add-diary input[type="text"],
+.add-diary input[type="date"],
+.add-diary textarea,
+.add-diary select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6e1ef;
+  background: #ffffff;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.add-diary textarea {
+  min-height: 90px;
+  resize: vertical;
+  grid-column: 1 / -1;
+}
+
+/* Focus state */
+.add-diary input:focus,
+.add-diary textarea:focus,
+.add-diary select:focus {
+  border-color: #7aa7d9;
+  box-shadow: 0 4px 12px rgba(122, 167, 217, 0.12);
+}
+
+/* Submit button (span full width on small screens) */
+.add-diary button[type="submit"] {
+  background: #1d3557;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.add-diary button[type="submit"]:hover {
+  background: #2a4a6d;
+  transform: translateY(-2px);
+}
+
+/* Diary list section */
+.diary-list {
+  margin-top: 22px;
+}
+
+.diary-list h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #010915;
+}
+
+/* Empty state */
+.diary-list p {
+  color: #422fe9;
+}
+
+/* Single diary item */
+.diary-item {
+  position: relative;
+  background: #fbfdff;
+  border: 1px solid #eef6fb;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+  box-shadow: 0 6px 18px rgba(29, 53, 87, 0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Hover lift */
+.diary-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(29, 53, 87, 0.06);
+}
+
+/* Info block */
+.diary-info {
+  flex: 1;
+}
+
+/* Title */
+.diary-info h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #1d3557;
+}
+
+/* Description */
+.diary-info p {
+  margin: 6px 0;
+  color: #374151;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Mood and date */
+.mood {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.date {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Smaller delete button (trash) */
+.delete-btn {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: transparent;
+  color: #e7091c;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px;
+  transition: transform 0.12s ease, color 0.12s ease;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  transform: scale(1.15);
+  color: #de0a18;
+}
+
+
+/* Make delete button slightly less prominent on small screens */
+@media (max-width: 480px) {
+  .delete-btn {
+    font-size: 16px;
+    top: 8px;
+    right: 8px;
+    padding: 5px;
+  }
+}
+
+/* Accessibility: focus outline for keyboard users */
+.delete-btn:focus,
+.logout-btn:focus,
+.add-diary button:focus,
+.add-diary input:focus,
+.add-diary select:focus,
+.add-diary textarea:focus {
+  outline: 3px solid rgba(34, 128, 176, 0.14);
+  outline-offset: 2px;
+}
+
+/* Small utility spacing */
+.small-note {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+/* Action buttons */
+.action-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Edit button */
+.edit-btn {
+  background: transparent;
+  color: #007bff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.edit-btn:hover {
+  color: #0056b3;
+  transform: scale(1.15);
+}
+
+/* Delete button */
+.delete-btn {
+  background: transparent;
+  color: #e63946;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.delete-btn:hover {
+  color: #b71c1c;
+  transform: scale(1.15);
+}
+
+/* Cancel edit button */
+.cancel-btn {
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #bbb;
+}
+
+/* End of file */
